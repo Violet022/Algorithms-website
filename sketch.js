@@ -19,15 +19,16 @@ function setup(){
         cities[i] = v;
         order[i] = i;
     }
-    //order.shift();
-    console.log(order);
+
+    order.shift();
+
     for(var i = 0; i < popSize; i++){
       population[i] = shuffle(order);
     }
     
 }
 
-
+ 
 function draw(){
   background(0);
 
@@ -41,23 +42,18 @@ function draw(){
   noFill();
 
   beginShape();
+
   for(var i = 0; i < bestEver.length; i++){
     var n = bestEver[i];
     vertex(cities[n].x, cities[n].y);
     ellipse(cities[n].x, cities[n].y, 16, 16);
   }
 
+  vertex(cities[0].x, cities[0].y);
+  line(cities[0].x, cities[0].y, cities[bestEver[0]].x, cities[bestEver[0]].y);
+  ellipse(cities[0].x, cities[0].y, 16, 16);
   endShape();
 
-  strokeWeight(1);
-
-  beginShape();
-  for(var i = 0; i < currentBest.length; i++){
-    var n = currentBest[i];
-    vertex(cities[n].x, cities[n].y);
-    ellipse(cities[n].x, cities[n].y, 16, 16);
-  }
-  endShape();
 }
 
 
@@ -80,15 +76,8 @@ function calcDistance(points, order){
     sum += d;
   }
 
-  /*
-  cityAIndex = order[0];
-  cityA = points[cityAIndex];
-  cityB = points[0];
-  sum += dist(cityA.x, cityA.y, cityB.x, cityB.y);
-
-  cityAIndex = order[order.length - 1];
-  sum += dist(cityA.x, cityA.y, cityB.x, cityB.y);
-  */
+  sum += dist(points[0].x, points[0].y, points[order[0]].x, points[order[0]].y);
+  sum += dist(points[0].x, points[0].y, points[order[order.length - 1]].x, points[order[order.length - 1]].y);
 
   return sum;
 }

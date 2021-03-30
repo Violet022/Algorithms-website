@@ -1,5 +1,4 @@
 function calculateFitness(){
-    var currentRecord = Infinity;
 
     for(var i = 0; i < population.length; i++){
         var d = calcDistance(cities, population[i]);
@@ -7,11 +6,6 @@ function calculateFitness(){
           recordDistance = d;
           bestEver = population[i];
         }
-
-        if(d < currentRecord){ 
-            currentRecord = d;
-            currentBest = population[i];
-          }
     
         fitness[i] = 1 / (d + 1);
       }
