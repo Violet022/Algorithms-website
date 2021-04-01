@@ -1,78 +1,102 @@
-var cities = [];
-var totalCities = 5;
+let cities = [];
+let totalCities;
 
-var population = [];
-var fitness = [];
+let population = [];
+let fitness = [];
 
-var popSize = 10;
-var recordDistance = Infinity;
-var bestEver;
-var currentBest;
-
+let popSize = 10;
+let recordDistance = Infinity;
+let bestEver;
+let isWorking = 0;
+let button;
+let canvasLength = 600;
+let canvasHeight = 600;
 
 function setup(){
-    createCanvas(600, 600);
-    var order = [];
-
-    for(var i = 0; i < totalCities; i++){
-        var v = createVector(random(width), random(height));
-        cities[i] = v;
-        order[i] = i;
-    }
-
-    order.shift();
-
-    for(var i = 0; i < popSize; i++){
-      population[i] = shuffle(order);
-    }
-    
+    createCanvas(canvasLength, canvasHeight);
+    background(0);
+    button = createButton('Lets start');
+    button.position(700, 0);
+    button.mousePressed(check);
 }
 
- 
-function draw(){
-  background(0);
+function mousePressed(){
+  if (isWorking == 0 && mouseX <= canvasLength && mouseY <= canvasHeight){
+    cities.push(new City(mouseX, mouseY));
+    stroke(255);
+    strokeWeight(4);
+    noFill();
+    ellipse(mouseX, mouseY, 16);
+    totalCities = cities.length;
+  }
+}
 
-//genetic algorithm
-  calculateFitness();
-  normalizeFitness();
-  nextGeneration();
+function check(){
+  isWorking = 1;
+  var basicOrder = [];
 
-  stroke(255);
-  strokeWeight(4);
-  noFill();
-
-  beginShape();
-
-  for(var i = 0; i < bestEver.length; i++){
-    var n = bestEver[i];
-    vertex(cities[n].x, cities[n].y);
-    ellipse(cities[n].x, cities[n].y, 16, 16);
+  for(let i = 0; i < totalCities; i++){
+    basicOrder[i] = i;
   }
 
-  vertex(cities[0].x, cities[0].y);
-  line(cities[0].x, cities[0].y, cities[bestEver[0]].x, cities[bestEver[0]].y);
-  ellipse(cities[0].x, cities[0].y, 16, 16);
-  endShape();
+  basicOrder.shift();
 
+  for(let i = 0; i < popSize; i++){
+    population[i] = shuffle(basicOrder);
+  }
 }
 
 
+
+function draw(){
+  if (isWorking){
+    background(0);
+    //genetic algorithm
+    calculateFitness();
+    normalizeFitness();
+    nextGeneration();
+
+    stroke(255);
+    strokeWeight(4);
+    noFill();
+
+    beginShape();
+
+    for(let i = 0; i < bestEver.length; i++){
+      let n = bestEver[i];
+      vertex(cities[n].x, cities[n].y);
+      ellipse(cities[i].x, cities[i].y, 16); 
+    }
+  
+    vertex(cities[0].x, cities[0].y);
+    line(cities[0].x, cities[0].y, cities[bestEver[0]].x, cities[bestEver[0]].y);
+    ellipse(cities[totalCities - 1].x, cities[totalCities - 1].y, 16);
+    endShape();
+  }
+}
+
+class City{
+  constructor(x, y){
+    this.x = x;
+    this.y = y;
+  }
+}
+
 function swap(a, i, j){
-  var temp = a[i];
+  let temp = a[i];
   a[i] = a[j];
   a[j] = temp;
 }
 
-
 function calcDistance(points, order){
-  var sum = 0;
+  let sum = 0;
   for(var i = 0; i < order.length - 1; i++){
-    var cityAIndex = order[i];
-    var cityA = points[cityAIndex];
-    var cityBIndex = order[i + 1];
-    var cityB = points[cityBIndex];
+    let cityAIndex = order[i];
+    let cityA = points[cityAIndex];
+    let cityBIndex = order[i + 1];
+    let cityB = points[cityBIndex];
 
-    var d = dist(cityA.x, cityA.y, cityB.x, cityB.y);
+    let d = dist(cityA.x, cityA.y, cityB.x, cityB.y);
     sum += d;
   }
 
