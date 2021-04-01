@@ -6,7 +6,6 @@ function calculateFitness(){
           recordDistance = d;
           bestEver = population[i];
         }
-        console.log(bestEver);
         fitness[i] = 1 / (d + 1);
       }
 }
