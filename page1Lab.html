@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@500&display=swap" rel="stylesheet">
+    <!--<link rel="stylesheet" href="css/bootstrap-grid.min.css">-->
+    <!--<link rel="stylesheet" href="css/main.css">-->
+    <link rel="stylesheet" href="page1Lab.css">
+</head>
+
+<body>
+    
+    <!--<header>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                   <p class="d-flex justify-content-center">Тут что-то будет</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3">
+                    <a href="Mainpage.html">Вернуться на главную</a></header>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3">
+                   <h1>A*</h1>
+                </div>
+            </div>
+        </div>
+    </section>-->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                   <h2>A*</h2>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="MapInformation">
+        
+        <div class="forMap">
+            <p>Введите размер лабиринта: </p>
+            <form autocomplete="off">
+                <div class="form">
+                    <input type="text" id="size" title="Размер лабиринта" min="1"/>
+                </div>
+                <div class="button">
+                    <button id="generate">Сгенерировать лабиринт</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="settings">
+            <p>Отметьте точки старта и финиша, удалите/добавьте непроходимые клетки (стены) на свое усмотрение, кликнув сначала на соответствующую кнопку ниже, а затем на ячейку поля.</p>
+            <div class="rules">
+                <div class="Points directionPoints">
+                    <div class="instruction S">
+                        <div id = "rectangle to start" class="rectangle start" title="Старт">
+                        </div>
+                        <div class="command">
+                            Старт
+                        </div>
+                    </div>
+                    <div class="instruction F">
+                        <div id = "rectangle to finish" class="rectangle finish" title="Финиш">
+                        </div>
+                        <div class="command">
+                            Финиш
+                        </div>
+                    </div>
+                </div>
+                <div class="Points wallPoints">
+                    <div class="instruction DE">
+                        <div id = "rectangle to AdddeadEnd" class="rectangle AdddeadEnd" title="Добавить стену">
+                        </div>
+                        <div class="command">
+                            Добавить<br> стену
+                        </div>
+                    </div>
+                    <div class="instruction RE">
+                        <div id = "rectangle to RemoveeadEnd" class="rectangle RemoveeadEnd" title="Удалить стену">
+                        </div>
+                        <div class="command">
+                            Удалить<br> стену
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="startAlgoritm" id = "algoritm">
+            Найти путь
+        </div>
+    </section>
+
+    <canvas id="map" width="730" height="730"></canvas>
+    <script src="page1Lab.js"></script>
+    <!--<footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 d-flex justify-content-center">
+                 <h3>И тут что-то будет</h3>
+                </div>
+            </div>
+        </div>
+    </footer>-->
+</body>
+</html>

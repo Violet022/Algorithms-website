@@ -1,0 +1,59 @@
+.name{
+    background-color: rgb(212, 239, 255);
+}
+
+#field{
+    border: 3px solid black;
+    padding: 0px;
+    float:left;
+    margin-right: 3%;
+    border-radius: 1%;
+}
+
+.settings{
+    float:left;
+}
+
+.inner{
+    margin-top: 25px;
+}
+
+.info, .start, .actions, #number, .name{
+    text-align: center;
+}
+
+#number{
+    margin-bottom: 10%;
+    border-radius: 5%;
+}
+
+.points, .clear, .start{
+    cursor: pointer;
+}
+
+.points, .clear{
+    float: left;
+    border: 1px solid black;
+    width: 80px;
+    padding: 3px;
+    border-radius: 5%;
+}
+
+.points{
+    margin-left: 5%;
+    margin-right: 3%;
+}
+
+.clear{
+    margin-right: 5%;
+    margin-left: 3%;
+}
+
+.start{
+    display: flex;
+    justify-content: center; 
+    margin: 30% 20% 0% 20%;
+    border: 1px solid black;
+    border-radius: 5%;
+    padding: 3px;
+}

@@ -1,0 +1,115 @@
+.container{
+    text-align: center;
+    height:50px;
+}
+
+.MapInformation{
+    border: 3px solid black;
+    width: 345px;
+    height: 640px;
+    margin: 50px 50px 10px 190px;
+    float:left;
+}
+
+.MapInformation, .rectangle, #map{
+    border-radius: 5px;
+}
+
+#generate, #size, .startAlgoritm{
+    border-radius: 3px;
+}
+
+#size{
+    width: 50px;
+    height: 35px;
+    text-align: center;
+}
+
+.form{
+    padding-bottom: 5px;
+}
+
+ .rectangle{
+     border: 2px solid black;
+     width: 60px;
+     height: 60px;
+ }
+ 
+ #map{
+     border: 3px solid black;
+     margin-top: 10px;
+     padding: 0px;
+ }
+
+ .settings{
+     padding-left: 25px;
+     padding-right: 25px;
+     margin-bottom: 35px;
+ }
+ 
+ .forMap, .startAlgoritm{
+    text-align: center;
+ }
+ .forMap{
+     margin-top: 40px;
+     margin-bottom: 42px;
+ }
+
+ .instruction{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.S, .DE{
+    margin-left: 20%;
+    margin-right: 5%;
+}
+
+.F, .RE{
+    margin-right: 20%;
+    margin-left: 5%;
+}
+
+ .instruction{
+     margin-bottom: 20px;
+ }
+
+ .startAlgoritm{
+     border: 2px solid black;
+     width: 150px;
+     height: 30px;
+     margin-left: auto;
+     margin-right: auto;
+ }
+
+.start{
+    background-color:#96c8eb;
+}
+
+.finish{
+    background-color:#67b2e7;
+}
+
+.AdddeadEnd{
+    background-color:#4c565f;
+}
+
+.command{
+    text-align: center;
+    margin-top: 3px;
+}
+
+/*.rectangle:hover{
+     width: 61px;;
+     height: 61px;
+}*/
+
+.startAlgoritm:hover{
+     width: 151px;
+     height: 31px;
+}
+
+.Points{
+    margin-left: 5%;
+    margin-right: 5%;
+}
