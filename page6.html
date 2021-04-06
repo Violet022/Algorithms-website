@@ -31,19 +31,25 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-xl-3">
-                   <h1>Нейронная сеть </h1>
-                   
-                </div>
-                <div class="col-xl-12">
-                    <p>Ваша нейронная сеть работает с пиксельным изображением размером 5 на 5 (25 пикселей). Пользователь может рисовать цифры за счёт покраски отдельных пикселей (смена чёрного на белый цвет и обратно). Ваша нейронная сеть понимает, какая цифра нарисована, и показывает это пользователю.
-                    </p>
+                <div class="col-xl-12 d-flex justify-content-center">
+                    <h1>Нейронная сеть</h1>
                 </div>
             </div>
         </div>
-    
-
-    </section>>
+        <canvas id="canv" style="display: block;">
+            Ваш браузер устарел
+        </canvas>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4"></div>
+                
+                <h2 class="col-xl-2 d-flex justify-content-center" id="to_clear">Стереть</h2>
+                <h2 class="col-xl-2 d-flex justify-content-center" id="Cell">По пикселям</h2>
+            </div>
+        </div>
+        
+    </section>
     <footer>
         <div class="container">
             <div class="row">
@@ -53,5 +59,6 @@
             </div>
         </div>
     </footer>
+    <script src="js/neiron.js"></script> 
 </body>
 </html>
