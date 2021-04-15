@@ -1,6 +1,7 @@
 body{
     font-family: 'Cormorant Unicase', serif;
     margin: 0px;
+   
 }
 header{
     background-color: white;
@@ -77,4 +78,56 @@ a:hover{
 }
 .sec{
     color: white;
+}
+#canv{
+    outline: 2px solid #000;
+    float: left;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    /*margin-left: 550px;*/
+    background-color: white;
+    cursor: pointer;
+}
+#to_clear{
+    outline: 2px solid #000;
+    width: 150px;
+    margin-top: 10px;
+    margin-right:10px;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    background-color: rgb(212, 239, 255);
+}
+#result{
+    outline: 2px solid #000;
+    margin-top: 110px;
+    width: 150px;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    background-color: rgb(212, 239, 255);
+}
+.settings{
+    float: left;
+    margin-left: 50px;
+}
+#teach{
+    outline: 2px solid #000;
+    margin-top: 30px;
+    width: 150px;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    background-color: rgb(212, 239, 255);
+}
+#answer{
+    width: 180px;
+    height: 180px;
+    outline: 2px solid #000;
+    background-color: white;
 }
