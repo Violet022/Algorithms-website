@@ -4,56 +4,73 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Алгоритм кластеризации</title>
     <link rel="preconnect" href="https://fonts.gstatic.com"> 
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@500&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="css/bootstrap-grid.min.css">
-   <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="page2.css">
 </head>
 <body>
-    
     <header>
         <div class="container">
             <div class="row">
-                <div class="col-xl-12">
-                   <p class="d-flex justify-content-center">Тут что-то будет</p>
+                <div class="col-xl-2">
+                   <a href="page1.html" class="d-flex justify-content-center">A*</a>
+                </div>
+                <div class="col-xl-2">
+                    <a href="page2.html" class="d-flex justify-content-center">Алгоритм кластеризации</a>
+                </div>
+                <div class="col-xl-2">
+                    <a href="page3.html" class="d-flex justify-content-center">Генетический алгоритм</a>
+                </div>
+                <div class="col-xl-2">
+                    <a href="page4.html" class="d-flex justify-content-center">Муравьиный алгоритм</a>
+                </div>
+                <div class="col-xl-2">
+                    <a href="page5.html" class="d-flex justify-content-center">Дерево решений</a>
+                </div>
+                <div class="col-xl-2">
+                    <a href="page6.html" class="d-flex justify-content-center">Нейронная сеть</a>
                 </div>
             </div>
         </div>
     </header>
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-3">
-                    <a href="Mainpage.html">Вернуться на главную</a></header>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-3">
+                <a href="Mainpage.html" class="d-flex justify-content-center">Вернуться на главную</a></header>
+            </div>
+        </div>
+    </div>
+    <div class="container name">
+        <div class="row">
+            <div class="col-xl-12 d-flex justify-content-center">
+                <h1>Алгоритм кластеризации</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="inner col-xl-12 d-flex justify-content-center">
+                <canvas id="field" width="550" height="550"></canvas>
+                <div class="settings">
+                    <div class="info">
+                        <p class="command">Введите количество кластеров: </p>
+                        <form autocomplete="off">
+                            <div class="form">
+                                <input type="text" id="number" title="Количество кластеров" min="1"/>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="actions">
+                        <div class="points" id = "points" title="Расставить точки">Расставить<br> точки</div>
+                        <div class="clear" id="clear" title="Очистить плоскость">Очистить<br> плоскость</div>
+                    </div>
+                    <div class="start" id="start" title="Найти кластеры">Найти кластеры</div>
                 </div>
             </div>
         </div>
-        
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-3">
-                   <h1>Алгоритм кластеризации</h1>
-                   
-                </div>
-                <div class="col-xl-12">
-                    <p>Ваше приложение генерирует плоскость, на которой пользователь может кликами расставлять точки для будущей кластеризации. Далее запускается алгоритм, который показывает найденные кластеры (цветом или поделив плоскости на области кластеры). Достаточно одного из варианта определения кластеров (например K-средних)
-
-                    </p>
-                </div>
-            </div>
-        </div>
-    
-
-    </section>>
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12 d-flex justify-content-center">
-                 <h3>И тут что-то будет</h3>
-                </div>
-            </div>
-        </div>
-    </footer>
+    </div>
+    <script src="page2.js"></script>
 </body>
 </html>
