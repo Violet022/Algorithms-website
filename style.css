@@ -3,6 +3,7 @@ html, body {
   padding: 0;
 }
 
-canvas {
-  display: block;
+#toStart {
+  outline: 2px solid #000;
+  cursor: pointer;
 }

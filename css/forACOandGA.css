@@ -1,0 +1,105 @@
+body{
+    font-family: 'Cormorant Unicase', serif;
+    margin: 0px;
+}
+header{
+    background-color: white;
+    padding-top: 20px;
+}
+section{
+    background-color:rgb(255, 255, 255);
+    padding-bottom: 0px;
+    padding-top: 20px;
+}
+footer{
+    background-color: rgb(212, 239, 255);
+}
+.nav_elem{
+    padding-left: 100px;
+    
+}
+
+ul, li{
+    list-style-type: none;
+}
+
+.list_title{
+    font-size: xx-large;
+    padding-bottom: 20px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a:visited{
+    color: black;
+}
+a:hover{
+    font-weight: bold;
+}
+.holder{
+    position:relative;   
+    width:450px;
+    height:450px;
+}
+.block{
+    position:absolute;
+    left: 0;;
+    bottom:0;
+    right:0;
+    top:0;
+    background:rgba(255,255,255, 0.7);
+    padding:5px;
+    padding-top: 100px;
+ 
+    display:none;
+}
+.holder:hover .block{
+    display:block;
+}
+.holder-right{
+    position:relative;   
+    width:450px;
+    height:450px;
+    margin-left: 50px;
+}
+.holder-right:hover .block{
+    display:block;
+}
+.holder-left{
+    position:relative;   
+    width:450px;
+    height:450px;
+    margin-right: 50px;
+}
+.holder-left:hover .block{
+    display:block;
+}
+.sec{
+    color: white;
+}
+canvas {
+    display: block;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+#toStart {
+    outline: 2px solid #000;
+    cursor: pointer;
+    width: 100px;
+    margin-right: 100px;
+    text-align: center;
+  }
+
+#toStop {
+    outline: 2px solid #000;
+    cursor: pointer;
+    width: 100px;
+    text-align: center;
+  }
+
+

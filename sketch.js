@@ -3,27 +3,34 @@ let totalCities;
 
 let population = [];
 let fitness = [];
+let distances = [];
 
-let popSize = 10;
+let popSize = 10000;
 let recordDistance = Infinity;
 let bestEver;
 let isWorking = 0;
-let button;
+
 let canvasLength = 600;
 let canvasHeight = 600;
 
 function setup(){
-    createCanvas(canvasLength, canvasHeight);
-    background(0);
-    button = createButton('Lets start');
-    button.position(700, 0);
-    button.mousePressed(check);
+    let canvas = createCanvas(canvasLength, canvasHeight);
+    canvas.id("myCanvas");
+    document.getElementById('myCanvas').addEventListener('click', MousePressed);
+    background(214, 214, 214);
+    
 }
 
-function mousePressed(){
-  if (isWorking == 0 && mouseX <= canvasLength && mouseY <= canvasHeight){
+function stop(){
+  isWorking = 0;
+}
+
+
+
+function MousePressed(){
+  if (isWorking == 0){ 
     cities.push(new City(mouseX, mouseY));
-    stroke(255);
+    stroke(138, 138, 138);
     strokeWeight(4);
     noFill();
     ellipse(mouseX, mouseY, 16);
@@ -31,14 +38,21 @@ function mousePressed(){
   }
 }
 
+
+document.getElementById('toStop').addEventListener('click', stop);
+
 function check(){
   isWorking = 1;
   var basicOrder = [];
 
   for(let i = 0; i < totalCities; i++){
     basicOrder[i] = i;
+    distances[i] = [];
+    for(let j = 0; j < totalCities; j++){
+      distances[i][j] = dist(cities[i].x, cities[i].y, cities[j].x, cities[j].y);
+    }
   }
-
+  console.log(distances);
   basicOrder.shift();
 
   for(let i = 0; i < popSize; i++){
@@ -46,17 +60,18 @@ function check(){
   }
 }
 
-
+document.getElementById('toStart').addEventListener('click', check);
 
 function draw(){
   if (isWorking){
-    background(0);
+    background(214, 214, 214);
+
     //genetic algorithm
     calculateFitness();
     normalizeFitness();
     nextGeneration();
 
-    stroke(255);
+    stroke(138, 138, 138);
     strokeWeight(4);
     noFill();
 
@@ -96,12 +111,12 @@ function calcDistance(points, order){
     let cityBIndex = order[i + 1];
     let cityB = points[cityBIndex];
 
-    let d = dist(cityA.x, cityA.y, cityB.x, cityB.y);
+    let d = distances[cityAIndex][cityBIndex];
     sum += d;
   }
-
-  sum += dist(points[0].x, points[0].y, points[order[0]].x, points[order[0]].y);
-  sum += dist(points[0].x, points[0].y, points[order[order.length - 1]].x, points[order[order.length - 1]].y);
+  sum += distances[0][order[0]];
+  sum += distances[0][order[order.length - 1]];
+  
 
   return sum;
 }
