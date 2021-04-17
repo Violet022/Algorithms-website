@@ -9,7 +9,7 @@ function Cluster(coor1, coor2){
 }
 
 function DrawAPoint(event){
-    if(abilityToMakePoints == true){
+    if(abilityToMakePoints === true){
         let x, y;
         let current_dot;
         
@@ -37,7 +37,7 @@ function MoveCenters(){
         finished = true;
         numberOfDotsInClust = clusters[i].dots_included.length;
 
-        if(numberOfDotsInClust == 0){
+        if(numberOfDotsInClust === 0){
             clusters[0].common_dist = Infinity;
             return finished;
         }
@@ -98,7 +98,7 @@ function ShowClusters(mas){
         let g = Math.floor(Math.random() * (256));
         let b = Math.floor(Math.random() * (256));
         let color = '#' + r.toString(16) + g.toString(16) + b.toString(16);
-        if(!colors.includes(color) && color.length == 7){
+        if(!colors.includes(color) && color.length === 7){
             colors[cnt] = color;
             cnt++;
         }

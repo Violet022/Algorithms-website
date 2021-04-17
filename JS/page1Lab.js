@@ -31,13 +31,13 @@ function MakeAMap(event){
     context.fillStyle = "#4c565f";
     context.fillRect(0, 0, canvas.width, canvas.height);
     
-    if (typeof grid != "undefined"){
+    if (typeof grid !== "undefined"){
         grid.length = 0;
     }
-    if(typeof start != "undefined"){
+    if(typeof start !== "undefined"){
         start = undefined;
     }
-    if(typeof finish != "undefined"){
+    if(typeof finish !== "undefined"){
         finish = undefined;
     }
 
@@ -69,28 +69,28 @@ function GetRandom(min, max){
 
 function Up(){ 
     for(let j = 0; j < number; j++){ 
-        if(grid[1][j].walkable == true && grid[2][j].walkable == true){
+        if(grid[1][j].walkable === true && grid[2][j].walkable === true){
             grid[0][j].clear();
         }
     }
 }
 function Right(){ 
     for(let i = 0; i < number; i++){
-        if(grid[i][number - 2].walkable == true && grid[i][number - 3].walkable == true){
+        if(grid[i][number - 2].walkable === true && grid[i][number - 3].walkable === true){
             grid[i][number - 1].clear();
         }
     } 
 }
 function Down(){ 
     for(let j = 0; j < number; j++){ 
-        if(grid[number - 2][j].walkable == true && grid[number - 3][j].walkable == true){
+        if(grid[number - 2][j].walkable === true && grid[number - 3][j].walkable === true){
             grid[number - 1][j].clear();
         }
     }  
 }
 function Left(){ 
     for(let i = 0; i < number; i++){
-        if(grid[i][1].walkable == true && grid[i][2].walkable == true){
+        if(grid[i][1].walkable === true && grid[i][2].walkable === true){
             grid[i][0].clear();
         }
     }  
@@ -148,25 +148,25 @@ function MakeALab(){
             dir_index = GetRandom(0, directions.length - 1);
             switch (directions[dir_index]){
                 case "Up":
-                    if(x - 2 >= 0 && grid[x - 2][y].walkable == true){
+                    if(x - 2 >= 0 && grid[x - 2][y].walkable === true){
                         grid[x - 1][y].clear();
                         directions.splice(0,directions.length);
                     }
                     break;
                 case "Down":
-                    if(x + 2 < number && grid[x + 2][y].walkable == true){
+                    if(x + 2 < number && grid[x + 2][y].walkable === true){
                         grid[x + 1][y].clear();
                         directions.splice(0,directions.length);
                     }
                     break;
                 case "Right":
-                    if(y + 2 < number && grid[x][y + 2].walkable == true){
+                    if(y + 2 < number && grid[x][y + 2].walkable === true){
                         grid[x][y + 1].clear();
                         directions.splice(0,directions.length);
                     }
                     break;
                 case "Left":
-                    if(y - 2 >= 0 && grid[x][y - 2].walkable == true){
+                    if(y - 2 >= 0 && grid[x][y - 2].walkable === true){
                         grid[x][y - 1].clear();
                         directions.splice(0,directions.length);
                     }
@@ -179,7 +179,7 @@ function MakeALab(){
             possible_x = x + ways_x[k];
             possible_y = y + ways_y[k];
             if(possible_x >= 0 && possible_x < number && possible_y >= 0 && possible_y < number){
-                if(grid[possible_x][possible_y].walkable == false && !nodesToCheck.includes(grid[possible_x][possible_y])){
+                if(grid[possible_x][possible_y].walkable === false && !nodesToCheck.includes(grid[possible_x][possible_y])){
                     nodesToCheck.push(grid[possible_x][possible_y]);
                 }
             }
@@ -187,17 +187,17 @@ function MakeALab(){
     }
     
     // углы
-    if(number % 2 == 0){
-        if(first_x % 2 == 0){
-            first_y % 2 == 0 ? Sides(["Right", "Down"]) : Sides(["Left", "Down"]);
+    if(number % 2 === 0){
+        if(first_x % 2 === 0){
+            first_y % 2 === 0 ? Sides(["Right", "Down"]) : Sides(["Left", "Down"]);
         }
         else{
-            first_y % 2 == 0 ? Sides(["Right", "Up"]) : Sides(["Left", "Up"]);
+            first_y % 2 === 0 ? Sides(["Right", "Up"]) : Sides(["Left", "Up"]);
         }
     }
     else{
-        if(first_x % 2 != 0){
-            first_y % 2 == 0 ? Sides(["Up", "Down"]) : Sides(["Up", "Down", "Left", "Right"]);
+        if(first_x % 2 !== 0){
+            first_y % 2 === 0 ? Sides(["Up", "Down"]) : Sides(["Up", "Down", "Left", "Right"]);
         }
         else{
             Sides(["Left", "Right"]);
@@ -240,9 +240,9 @@ function Fill(event){ // при клике мыши
         let posY = Place_Y(event.pageY);
         context.fillStyle = color;
 
-        if (color == lightblue){
-            if(grid[posY][posX].walkable == true){
-                if(typeof start != "undefined"){
+        if (color === lightblue){
+            if(grid[posY][posX].walkable === true){
+                if(typeof start !== "undefined"){
                     start = Change(start, color, posX, posY);
                 }
                 else{
@@ -251,8 +251,8 @@ function Fill(event){ // при клике мыши
                 }
             } 
         }
-        else if (color == darkblue){
-            if(grid[posY][posX].walkable == true){
+        else if (color === darkblue){
+            if(grid[posY][posX].walkable === true){
                 if(typeof finish != "undefined"){
                     finish = Change(finish, color, posX, posY);
                 }
@@ -262,7 +262,7 @@ function Fill(event){ // при клике мыши
                 }
             }
         }
-        else if (color == black){
+        else if (color === black){
             FillWithColor(posX, posY, size);
             grid[posY][posX].walkable = false;
         }
@@ -273,12 +273,12 @@ function Fill(event){ // при клике мыши
 }
 
 function Wall(event){ // при ведении зажатой кнопки мыши
-    if(isMouseDown && (color == black || color == white)){
+    if(isMouseDown && (color === black || color === white)){
         let posX = Place_X(event.pageX);
         let posY = Place_Y(event.pageY);
         context.fillStyle = color;
         FillWithColor(posX, posY, size);
-        if(color == black){
+        if(color === black){
             grid[posY][posX].walkable = false;
         }
         else{
@@ -295,7 +295,7 @@ function ShowThePath(way){
         context.fillRect(way[i].y * size, way[i].x * size, size, size);
         context.strokeRect(way[i].y * size, way[i].x * size, size, size);
         i++;
-        if(i == way.length - 1){
+        if(i === way.length - 1){
             clearInterval(timeId);
         }
     }
@@ -304,7 +304,7 @@ function ShowThePath(way){
 function Path(node){ 
     let way = [];
     let current = node;
-    while(current.parent != null){
+    while(current.parent !== null){
         way.push(current);
         current = current.parent;
     }
@@ -347,13 +347,13 @@ async function A_star(){
         opened.splice(current_Index, 1);
         closed.push(current_Node);
 
-        if (current_Node.x == finish.x && current_Node.y == finish.y){
+        if (current_Node.x === finish.x && current_Node.y === finish.y){
             Path(current_Node);
             isPathExist = true;
             break;
         }
 
-        if(current_Node != start){
+        if(current_Node !== start){
             context.fillStyle = "#8d3f88"; 
             FillWithColor(current_Node.y, current_Node.x, size);
         }
@@ -381,7 +381,7 @@ async function A_star(){
                 neighbour.f = neighbour.g + neighbour.h;
                 opened.push(neighbour);
 
-                if(current_Node.x != finish.x && current_Node.y != finish.y){
+                if(current_Node.x !== finish.x && current_Node.y !== finish.y){
                     context.fillStyle = "#d095cc"; 
                     FillWithColor(neighbour_y, neighbour_x, size);
                 }
@@ -392,11 +392,11 @@ async function A_star(){
                 neighbour.f = neighbour.g + neighbour.h;
             }
         }
-        if(isPathExist == false){
+        if(isPathExist === false){
             await delay(300);
         }
     }
-    if(isPathExist == false){
+    if(isPathExist === false){
         alert("Пути не существует");
     }
 }
@@ -405,7 +405,7 @@ function delay(timeout) {
 }
 
 function ChangeRectBorder(new_rectangle){
-    if(typeof old_rectangle != 'undefined'){
+    if(typeof old_rectangle !== 'undefined'){
         old_rectangle.style.border = '2px solid black';
         new_rectangle.style.border = '3px solid black';
         old_rectangle = new_rectangle;
