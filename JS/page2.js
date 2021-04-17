@@ -129,7 +129,7 @@ function K_means_algoritm(){
     clusterNumber = document.getElementById('number').value;
     W = Infinity;
 
-    for(let count = 0; count < 20; count++){
+    for(let count = 0; count < 100; count++){
         flag = false;
         shouldStop = false;
         centers.length = 0;

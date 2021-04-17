@@ -1,20 +1,20 @@
 body{
     font-family: 'Cormorant Unicase', serif;
-    font-weight: 500;
     margin: 0px;
-   
 }
 header{
     background-color: rgb(212, 239, 255);
     padding-top: 40px;
-    padding-bottom: 35px;
+    padding-bottom: 40px;
 }
 section{
     background-color:rgb(255, 255, 255);
-    padding-bottom: 100px;
+    padding-bottom: 0px;
     padding-top: 20px;
 }
-
+footer{
+    background-color: rgb(212, 239, 255);
+}
 .nav_elem{
     padding-left: 100px;
     
@@ -79,55 +79,36 @@ a:hover{
 .sec{
     color: white;
 }
-#canv{
-    outline: 2px solid #000;
-    float: left;
+canvas {
+    display: block;
     top: 0;
     right: 0;
     left: 0;
     bottom: 0;
-    /*margin-left: 550px;*/
-    background-color: white;
-    cursor: pointer;
+    margin: auto;
 }
-#to_clear{
+
+#toStart {
     outline: 2px solid #000;
-    width: 150px;
-    margin-top: 10px;
-    margin-right:10px;
-    padding-left: 30px;
-    padding-top: 10px;
-    padding-bottom: 10px;
     cursor: pointer;
-    background-color: rgb(212, 239, 255);
-}
-#result{
+    width: 100px;
+    margin-right: 100px;
+    text-align: center;
+  }
+
+#toStop {
     outline: 2px solid #000;
-    margin-top: 110px;
-    width: 150px;
-    padding-left: 30px;
-    padding-top: 10px;
-    padding-bottom: 10px;
     cursor: pointer;
-    background-color: rgb(212, 239, 255);
+    width: 100px;
+    text-align: center;
+  }
+  a{
+    text-decoration: none;
+    color: black;
 }
-.settings{
-    float: left;
-    margin-left: 50px;
+a:visited{
+    color: black;
 }
-#teach{
-    outline: 2px solid #000;
-    margin-top: 30px;
-    width: 150px;
-    padding-left: 30px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    cursor: pointer;
-    background-color: rgb(212, 239, 255);
-}
-#answer{
-    width: 180px;
-    height: 180px;
-    outline: 2px solid #000;
-    background-color: white;
+a:hover{
+    font-weight: bold;
 }

@@ -1,54 +1,57 @@
 <!DOCTYPE html>
 <html lang="ru">
 
-<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Алгоритм А*</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com"> 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="bootstrap-grid.min.css">
+    <link rel="stylesheet" href="CSS/bootstrap-grid.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@500;700&display=swap" rel="stylesheet">
     <!--<link rel="stylesheet" href="css/main.css">-->
-    <link rel="stylesheet" href="page1Lab.css">
-</head>
+    <link rel="stylesheet" href="CSS/page1Lab.css">
 
 <body>
     
-    <!--<header>
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                   <p class="d-flex justify-content-center">Тут что-то будет</p>
-                </div>
-            </div>
-        </div>
-    </header>
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-3">
-                    <a href="Mainpage.html">Вернуться на главную</a></header>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-3">
-                   <h1>A*</h1>
-                </div>
-            </div>
-        </div>
-    </section>-->
     <header>
-        <div class="container Head">
+        <div class="container">
             <div class="row">
-                <div class="col-xl-12">
-                   <h2>A*</h2>
+                <div class="col-xl-2">
+                   <a href="page1.html" class="d-flex justify-content-center">A*</a>
+                </div>
+                <div class="col-xl-2">
+                    <a href="page2.html" class="d-flex justify-content-center">Алгоритм кластеризации</a>
+                </div>
+                <div class="col-xl-2">
+                    <a href="page3.html" class="d-flex justify-content-center">Генетический алгоритм</a>
+                </div>
+                <div class="col-xl-2">
+                    <a href="page4.html" class="d-flex justify-content-center">Муравьиный алгоритм</a>
+                </div>
+                <div class="col-xl-2">
+                    <a href="page5.html" class="d-flex justify-content-center">Дерево решений</a>
+                </div>
+                <div class="col-xl-2">
+                    <a href="page6.html" class="d-flex justify-content-center">Нейронная сеть</a>
                 </div>
             </div>
         </div>
     </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-3">
+                <a href="Mainpage.html">Вернуться на главную</a></header>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 d-flex justify-content-center">
+                <h1>A*</h1>
+            </div>
+        </div>
+    </div>
+   
 
     <div class="container">
         <div class="row">
@@ -56,7 +59,7 @@
                 <section class="MapInformation">
         
                     <div class="forMap">
-                        <p>Введите размер лабиринта: </p>
+                        <p class="LabSize">Введите размер лабиринта: </p>
                         <form autocomplete="off">
                             <div class="form">
                                 <input type="text" id="size" title="Размер лабиринта" min="1"/>
@@ -104,16 +107,17 @@
                             </div>
                         </div>
                     </div>
-                    
+
+                    <!--<div class="startAlgoritm" id = "algoritm">Найти путь</div>-->
                     <div class="startAlgoritm" id = "algoritm">
                         <p class = "FindWay">Найти путь</p>
                     </div>
                 </section>
-            
-                <canvas id="map" width="730" height="730"></canvas>
+                
+               <canvas id="map" width="730" height="730"></canvas>
             </div>
         </div>
     </div>
-    <script src="page1Lab.js"></script>
+    <script src="JS/page1Lab.js"></script>
 </body>
 </html>

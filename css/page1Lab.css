@@ -1,0 +1,156 @@
+body{
+    margin: 0px;
+}
+
+header{
+    background-color: rgb(212, 239, 255);
+    padding-top: 40px;
+    padding-bottom: 35px;
+}
+section{
+    background-color:rgb(255, 255, 255);
+    padding-bottom: 100px;
+    padding-top: 20px;
+}
+
+.nav_elem{
+    padding-left: 100px;
+    
+}
+
+ul, li{
+    list-style-type: none;
+}
+
+.list_title{
+    font-size: xx-large;
+    padding-bottom: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+a:visited{
+    color: black;
+}
+a:hover{
+    font-weight: bold;
+}
+
+.container{
+    text-align: center;
+}
+
+.inner{
+    font: 400 Arial;
+}
+
+.forMap{
+    margin-top: 40px;
+    margin-bottom: 42px;
+}
+
+.MapInformation{
+    border: 3px solid black;
+    width: 345px;
+    height: 600px;
+    margin: 20px 50px 20px 0px;
+    float:left;
+}
+
+.MapInformation, .rectangle, #map{
+    border-radius: 5px;
+}
+
+.form{
+    padding-bottom: 5px;
+}
+
+#generate, #size, .startAlgoritm{
+    border-radius: 3px;
+}
+
+#size{
+    width: 50px;
+    height: 35px;
+    text-align: center;
+}
+
+.settings{
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-bottom: 35px;
+}
+
+
+.Points{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.rectangle{
+    border: 2px solid black;
+    width: 60px;
+    height: 60px;
+}
+
+.instruction{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.FindWay{
+    margin: 3.8% 0%;
+    text-align: center;
+ }
+
+.S, .DE{
+    margin-left: 53.75px;
+    margin-right: 10px;
+}
+
+.F, .RE{
+    margin-right: 53.75px;
+    margin-left: 10px;
+}
+
+.instruction{
+     margin-bottom: 20px;
+ }
+
+ .startAlgoritm{
+     border: 2px solid black;
+     width: 150px;
+     height: 30px;
+     margin-left: auto;
+     margin-right: auto;
+ }
+
+.start{
+    background-color:#99daff;
+}
+
+.finish{
+    background-color:#0081cc;
+}
+
+.AdddeadEnd{
+    background-color:#4c565f;
+}
+
+.command{
+    text-align: center;
+    margin-top: 3px;
+}
+
+.startAlgoritm:hover{
+     width: 152px;
+     height: 32px;
+}
+
+#map{
+    border: 3px solid black;
+    margin-bottom: 10px;
+    padding: 0px;
+}

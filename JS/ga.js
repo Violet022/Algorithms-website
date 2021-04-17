@@ -25,8 +25,12 @@ function nextGeneration(){
     for(let i = 0; i < population.length; i++){
         let orderA = pickOne(population, fitness);
         let orderB = pickOne(population, fitness);
+        while(orderB == orderA){
+            orderB = pickOne(population, fitness);
+        }
         let order = crossOver(orderA, orderB);
         mutate(order);
+        
         newPopulation[i] = order;
     }
     population = newPopulation;
@@ -45,16 +49,28 @@ function pickOne(list, prob){
 }
 
 function crossOver(orderA, orderB){
-    let start = floor(random(orderA.length));
-    let end = floor(random(start + 1, orderA.length));
-    let neworder = orderA.slice(start, end);
+    let breakPoint = floor(random(1, orderA.length));
+    
+    let neworder = orderA.slice(0, breakPoint);
 
-    for(let i = 0; i < orderB.length; i++){
+    for(let i = breakPoint; i < orderB.length; i++){
         let city = orderB[i];
         if(!neworder.includes(city)){
             neworder.push(city);
+            
         }
     }
+
+    if (neworder.length != orderB.length){
+        for(let i = breakPoint; i < orderA.length; i++){
+            let city = orderA[i];
+            if(!neworder.includes(city)){
+                neworder.push(city);
+                
+            }
+        }
+    }
+
     return neworder;
 }
 

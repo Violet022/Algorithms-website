@@ -28,7 +28,7 @@ function Node(i, j)
 function MakeAMap(event){ 
     
     event.preventDefault();
-    context.fillStyle = "#4c565f"; 
+    context.fillStyle = "#4c565f";
     context.fillRect(0, 0, canvas.width, canvas.height);
     
     if (typeof grid != "undefined"){
